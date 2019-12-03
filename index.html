@@ -21,7 +21,7 @@
 
 <body>
   <div class="wrapper">
-    <header class="header" style="background-image: url('images/header-bg.jpg')">
+    <header id="intro" class="header" style="background-image: url('images/header-bg.jpg')">
 
       <nav class="header-nav">
         <div class="header-container container">
@@ -30,14 +30,14 @@
           <!-- Navigation -->
           <div class="navigation">
             <!-- Toggle button -->
-            <label class="toggle-button" for="menu-checkbox" data-open="MENU" data-close="CLOSE" onclick></label>
+            <label class="toggle-button" for="menu-checkbox" data-open="MENU" data-close="CLOSE"></label>
             <ul class="main-menu">
               <!-- Menu -->
-              <li><a href="#">Главная</a></li>
-              <li><a href="#">Наши проекты</a></li>
-              <li><a href="#">Услуги</a></li>
-              <li><a href="#">Новости</a></li>
-              <li><a href="#">Контакты</a></li>
+              <li><a href="#intro">Главная</a></li>
+              <li><a href="#projects">Наши проекты</a></li>
+              <li><a href="#services">Услуги</a></li>
+              <li><a href="#about">О компании</a></li>
+              <li><a href="#contacts">Контакты</a></li>
             </ul>
           </div>
 
@@ -48,12 +48,12 @@
         <h1>Мы создаем легкие решения
           сложных задач и проблем</h1>
         <div class="btn-wrapper">
-          <a class="btn btn-blue" href="#">Наши проекты</a>
+          <a class="btn btn-blue btn-offer" href="#">Наши проекты</a>
         </div>
       </div>
     </header>
 
-    <section class="section section-services">
+    <section id="services" class="section section-services">
       <div class="section__inner container">
         <div class="heading-container">
           <h2>Мы создаем мобильные приложения
@@ -91,12 +91,12 @@
           </div>
         </div>
         <div class="btn-wrapper">
-          <a class="btn btn-blue" href="#">Все услуги</a>
+          <a class="btn btn-blue btn-offer" href="#">Все услуги</a>
         </div>
       </div>
     </section>
 
-    <section class="section section-grey section-standarts">
+    <section id="about" class="section section-grey section-standarts">
       <div class="section-standarts__inner container">
         <div class="section-standarts-wrapper">
           <div class="section-standarts-text">
@@ -113,43 +113,43 @@
         </div>
         <div class="projects-wrapper">
           <div class="project-item">
-            <p>125</p>
+            <p class="number">125</p>
             <span>Our projects</span>
           </div>
           <div class="project-item">
-            <p>125</p>
+            <p class="number">125</p>
             <span>Our projects</span>
           </div>
           <div class="project-item">
-            <p>125</p>
+            <p class="number">125</p>
             <span>Our projects</span>
           </div>
           <div class="project-item">
-            <p>125</p>
+            <p class="number">125</p>
             <span>Our projects</span>
           </div>
           <div class="project-item">
-            <p>125</p>
+            <p class="number">125</p>
             <span>Our projects</span>
           </div>
         </div>
       </div>
     </section>
 
-    <section class="section section-blue section-banner">
+    <section id="projects" class="section section-blue section-banner">
       <div class="section-banner__inner container">
         <h2>Наши работы, на которых
           мы специализируемся</h2>
-        <a href="#" class="btn btn-blue"><svg xmlns="http://www.w3.org/2000/svg"
-            xmlns:xlink="http://www.w3.org/1999/xlink" version="1.1" id="Capa_1" x="0px" y="0px"
-            viewBox="0 0 31.49 31.49" style="enable-background:new 0 0 31.49 31.49;" xml:space="preserve" width="512px"
-            height="512px" class="">
+        <div class="btn btn-blue"><svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink"
+            version="1.1" id="Capa_1" x="0px" y="0px" viewBox="0 0 31.49 31.49"
+            style="enable-background:new 0 0 31.49 31.49;" xml:space="preserve" width="512px" height="512px" class="">
             <g transform="matrix(-1.83697e-16 1 -1 -1.83697e-16 31.49 5.32907e-15)">
               <path
                 d="M21.205,5.007c-0.429-0.444-1.143-0.444-1.587,0c-0.429,0.429-0.429,1.143,0,1.571l8.047,8.047H1.111  C0.492,14.626,0,15.118,0,15.737c0,0.619,0.492,1.127,1.111,1.127h26.554l-8.047,8.032c-0.429,0.444-0.429,1.159,0,1.587  c0.444,0.444,1.159,0.444,1.587,0l9.952-9.952c0.444-0.429,0.444-1.143,0-1.571L21.205,5.007z"
                 data-original="#1E201D" class="active-path" data-old_color="#1E201D" fill="#FFFFFF" />
             </g>
-          </svg></a>
+          </svg>
+        </div>
       </div>
     </section>
 
@@ -260,7 +260,7 @@
           </div>
         </div>
         <div class="btn-wrapper">
-          <a href="#" class="btn btn-blue">Все проекты</a>
+          <a href="#" class="btn btn-blue btn-offer">Все проекты</a>
         </div>
       </div>
     </section>
@@ -269,38 +269,53 @@
       <div class="section-form__inner container">
         <h3>Подпишитесь на нашу рассылку</h3>
         <p>Полезные статьи, акции, новости - получите все это сейчас!</p>
-        <form action="#">
+
+        <form id="signUpForm" action="#" novalidate="">
           <div class="row row-1">
-            <input type="text" name="name" autocomplete="off" placeholder="Как к вам обращатся">
-            <input type="email" name="email" placeholder="Почта">
+            <div class="input-inner">
+              <input id="firstName" type="text" name="First Name" autocomplete="off" placeholder="First Name">
+              <span class="helper-text"></span>
+            </div>
+            <div class="input-inner">
+              <input id="lastName" type="text" name="Last Name" placeholder="Last Name" autocomplete="off">
+              <span class="helper-text"></span>
+            </div>
           </div>
           <div class="row row-2">
-            <select name="hobby">
-              <option value="" disabled selected>Направление</option>
-              <option value="web">Front-End</option>
-              <option value="qa">Quality Assurance</option>
-              <option value="dataAnalys">Data Analyst</option>
-              <option value="mobile">Mobile Developer</option>
-            </select>
-            <input type="date" data-placeholder="Выберите дату">
-            <input type="text" placeholder="Телефон">
+            <div class="input-inner">
+              <input id="password" type="password" name="password" placeholder="Password">
+              <span class="helper-text"></span>
+            </div>
+            <div class="input-inner">
+              <input id="confirmPassword" type="password" name="confirm" placeholder="Confirm password">
+              <span class="helper-text"></span>
+            </div>
           </div>
           <div class="row row-3">
-            <textarea name="message" placeholder="Расскажите о себе"></textarea>
+            <div class="input-inner">
+              <input id="email" type="email" name="email" placeholder="Email" autocomplete="off">
+              <span class="helper-text"></span>
+            </div>
           </div>
           <div class="row row-4">
-            <label>
-              <input type="checkbox" name="agreement">
-              Я даю согласие на использование персональных данных</label>
+            <div class="input-inner">
+              <label>
+                <input id="agreement" type="checkbox" name="agreement">
+                Я даю согласие на использование персональных данных</label>
+              <span class="helper-text"></span>
+            </div>
           </div>
           <div class="btn-wrapper">
             <input type="submit" class="btn btn-white">
           </div>
         </form>
+        <div class="submit-panel">
+          <span class="name"></span>, you have success submit!
+        </div>
       </div>
     </section>
 
-    <footer class="footer section section-grey">
+    <footer id="contacts" class="footer section section-grey">
       <div class="footer-inner container">
         <div class="footer-nav-wrapper">
           <div class="footer-col">
@@ -336,7 +351,25 @@
       </div>
     </footer>
 
+
+    <div class="pop-up">
+      <div class="pop-up__message">
+        <div class="pop-up-close">
+          <div class="pop-up-close__cross"></div>
+        </div>
+        <div class="pop-up-info">
+          <div class="pop-up-info__text">
+            Спасибо, что выбрали наш продукт!
+            Вам предоставлена <span>скидка 12%</span> на любую услугу!
+          </div>
+          <div class="pop-up-info__btn">Ok!</div>
+        </div>
+      </div>
+    </div>
+
   </div>
+
+  <script src="js/main.js"></script>
 </body>
 
 </html>
